@@ -1,38 +1,81 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
+}
+html{
+  font-size: 62.5%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/* largeur max de 1400px pr gérer les grands écrans */
+body{
+font-family: 'Montserrat', sans-serif;
+margin:auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+main{
+  padding: 25px 20px
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*Banner*/
+.kasa-banner{
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+}
+.kasa-banner ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding-left: 0px;
+    width: 120px;
+}
+.kasa-image-bg h1{
+  color:#fff;
+  font-size: 45px;
+}
+
+
+.kasa-image-bg{
+  display: flex;
+  text-align: center;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 225px;
+  border-radius: 25px;
+}
+
+.card-gallery{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 30px;
+  background-color: #F6F6F6;
+  border-radius: 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.card{
+  width: 30%;
+  height: 350px;
+  position:relative;
+  border-radius: 10px;
+  margin:15px
+}
+.card h2{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  color: #fff;
+  width: 100%;
+  font-weight: normal;
+}
+
+/*Footer*/
+.kasa-footer{
+  background-color: black;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
