@@ -73,6 +73,15 @@ main{
   font-weight: normal;
 }
 
+.card-details-grey-star{
+  color:#E3E3E3
+}
+
+.card-details-red-star{
+  color:#FF6060
+}
+
+
 /*Footer*/
 .kasa-footer{
   background-color: black;
