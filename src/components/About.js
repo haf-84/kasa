@@ -2,12 +2,13 @@ import Banner from './Banner';
 import Image from './Image';
 import Footer from "./Footer";
 import Collapse from "./Collapse";
+import image2 from "../assets/image2.png";
 
 function About(){
     return (
         <div>
             <Banner/>
-            <Image imageUrl="src/assets/image2.png"/>
+            <Image imageUrl={image2}/>
             <Collapse title='Fiabilité'>
             <div>
                 <p>Les annonces postées sur Kasa garantissent une fiabilité totale.</p>
