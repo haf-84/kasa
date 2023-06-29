@@ -15,6 +15,7 @@ function Routeur(){
         <Route path="/about" element={<About/>}/>
         <Route path='/card/:id' element={<CardDetails/>} />
         <Route path="/404" element={<Page404/>} />
+        <Route path="*" element={<Page404/>}/>
       </Routes>
     </Router>
   )

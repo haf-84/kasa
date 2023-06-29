@@ -3,6 +3,7 @@ import data from './Data.json';
 import Banner from "./Banner";
 import Collapse from "./Collapse";
 import Footer from "./Footer";
+import Slideshow from "./Slideshow";
 
 
 //utilisation de useParams hook pour récupérer le paramètre id de l'url 
@@ -31,34 +32,35 @@ function CardDetails(){
     //Génération des détails de la card
     return(
         <div>
+            <main>
             <Banner />
-            <div>
-                <div>
+            <Slideshow pictures={card.pictures} className='slideshow'/>
+            <div className="card-details-container">
+                <div className="card-details-title-location">
                     <h1>{card.title}</h1>
-                    <p>{card.location}</p>
+                    <p className="card-details-location">{card.location}</p>
                 </div>
                 <div className="card-details-host-info">
                     <p>{card.host.name}</p>
-                    <img src={card.host.picture}/>
+                    <img src={card.host.picture} alt="hôte logement kasa"/>
                 </div>
             </div>
-            <div>
-                <div className="card-details-stars">
-                    {generateStars()}
-                </div>
+            <div className="card-details-notation-tags">
                 <ul className="card-details-tags">
                     {card.tags.map((tag,index)=>(
                         <li key={index}>{tag}</li>
                     ))}
                 </ul>
-
+                <div className="card-details-stars">
+                    {generateStars()}
+                </div>
             </div>
-            <div>
-                <Collapse title="Description">
+            <div className="card-details-description-equipements">
+                <Collapse title="Description" className="card-details-title">
                     <p>{card.description}</p>
                 </Collapse>
                 
-                <Collapse title="Équipements">
+                <Collapse title="Équipements"className="card-details-description">
                     <ul> 
                     {card.equipments.map((equipment,index) => (
                         <li key={index}> {equipment}</li>
@@ -66,6 +68,7 @@ function CardDetails(){
                     </ul>
                 </Collapse>
             </div>
+            </main>
             <Footer/>
         </div>
     )
