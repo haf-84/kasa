@@ -37,18 +37,18 @@ function CardDetails(){
             <Slideshow pictures={card.pictures} className='slideshow'/>
             <div className="card-details-container">
                 <div className="card-details-title-location">
-                    <h1>{card.title}</h1>
+                    <h1 className="card-details-title-location-h1">{card.title}</h1>
                     <p className="card-details-location">{card.location}</p>
                 </div>
                 <div className="card-details-host-info">
-                    <p>{card.host.name}</p>
-                    <img src={card.host.picture} alt="hôte logement kasa"/>
+                    <p className="card-details-host-info-name">{card.host.name}</p>
+                    <img className="card-details-img-host"src={card.host.picture} alt="hôte logement kasa"/>
                 </div>
             </div>
             <div className="card-details-notation-tags">
                 <ul className="card-details-tags">
                     {card.tags.map((tag,index)=>(
-                        <li key={index}>{tag}</li>
+                        <li className="card-details-liste-tags" key={index}>{tag}</li>
                     ))}
                 </ul>
                 <div className="card-details-stars">
@@ -57,11 +57,11 @@ function CardDetails(){
             </div>
             <div className="card-details-description-equipements">
                 <Collapse title="Description" className="card-details-title">
-                    <p>{card.description}</p>
+                    <p className="content-mobile">{card.description}</p>
                 </Collapse>
                 
-                <Collapse title="Équipements"className="card-details-description">
-                    <ul> 
+                <Collapse title="Équipements" className="card-details-description">
+                    <ul className="content-mobile"> 
                     {card.equipments.map((equipment,index) => (
                         <li key={index}> {equipment}</li>
                     ))}

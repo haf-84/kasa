@@ -1,7 +1,7 @@
 function Image({imageUrl}){
     return (
         <div className='kasa-image-bg'>
-            <img src={imageUrl} alt="background Kasa" ></img>
+            <img className="kasa-header-image"src={imageUrl} alt="background Kasa" ></img>
         </div>
     )
 }

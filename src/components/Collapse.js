@@ -2,9 +2,11 @@ import {useState} from 'react';
 
 function Collapse({title, children}){
     const [isCollapsed,setIsCollapsed]=useState(true);
+    const [isVisible, setIsVisible] = useState(false);
 
     const toggleCollapse=()=>{
         setIsCollapsed(!isCollapsed);
+        setIsVisible(!isVisible);
     }
     
     return(
@@ -15,7 +17,7 @@ function Collapse({title, children}){
                     <i className={`fa-solid ${isCollapsed ? 'fa-angle-up': 'fa-angle-down'}`}/>
                 </div>
             </div>
-            {!isCollapsed && <div className='collapse-content'>{children}</div>}
+            {!isCollapsed && <div className={`collapse-content ${isVisible ? 'visible':'invisible'}`}>{children}</div>}
         </div>
     );
 }
