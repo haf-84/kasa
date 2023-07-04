@@ -57,7 +57,7 @@ function CardDetails(){
             </div>
             <div className="card-details-description-equipements">
                 <Collapse title="Description" className="card-details-title">
-                    <p className="content-mobile">{card.description}</p>
+                    {card.description}
                 </Collapse>
                 
                 <Collapse title="Équipements" className="card-details-description">

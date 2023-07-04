@@ -183,14 +183,21 @@ main {
 
   /*collapse *animation du contenu */
   .collapse-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
   }
-
-  .expanded .collapse-content {
-    max-height: 1000px;
-    transition: max-height 0.4s ease-in-out;
+  
+  .expanded {
+    .collapse-content {
+      visibility: visible;
+      opacity: 1;
+      height: auto;
+      padding: 10px;
+      transition: visibility 0.5s ease-in-out,
+                  opacity 0.5s ease-in-out,
+                  height 0.4s ease-in-out;
+    }
   }
 
   /*animation pr l'icone*/
@@ -200,18 +207,18 @@ main {
 
   .toggle-icon {
     position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    transition: transform 0.4s ease-in-out;
+    top: 20%;
+    right: 1%;
+    /* transform: rotate(0deg); */
+    transition: all 0.5s ease-in-out;
   }
 
   .collapsed .toggle-icon {
-    transform: translateY(-50%) rotate(0deg);
+    transform: rotate(180deg);
   }
 
   .expanded .toggle-icon {
-    transform: translateY(-50%) rotate(-180deg);
+    transform: rotate(-180deg);
   }
 }
 
@@ -384,7 +391,7 @@ main {
   justify-content: space-between;
 
   .collapse:first-child, .collapsed:first-child{
-    margin-right:20px;
+    margin-right:35px;
   }
   .collapse-header h2{
     font-size: 18px;
@@ -394,6 +401,26 @@ main {
   .collapse, .collapsed{
     width: 100%;
   }
+    /*animation pr l'icone*/
+    .collapse-header {
+      position: relative;
+    }
+  
+    .toggle-icon {
+      position: absolute;
+      top: 20%;
+      right: 2%;
+      /* transform: rotate(0deg); */
+      transition: all 0.5s ease-in-out;
+    }
+  
+    .collapsed .toggle-icon {
+      transform: rotate(180deg);
+    }
+  
+    .expanded .toggle-icon {
+      transform: rotate(-180deg);
+    }
 
   .collapse-header {
     display: flex;
@@ -405,17 +432,14 @@ main {
     padding: 10px 20px 10px 15px;
     height: 50px;
     position: relative;
+
   }
   .card-details-description-equipements :nth-child(1) {
     margin-right: 20px;
   }
-  .collapsed .toggle-icon {
-    transform: translateY(-25%) rotate(0deg);
-  }
-  .expanded .toggle-icon {
-    transform: translateY(25%) rotate(-180deg);
-  }
-  .toggle-icon {
+  
+
+  /* .toggle-icon {
     position: absolute;
     top: 50%;
     left: 94%;
@@ -424,7 +448,7 @@ main {
     &:hover{
       cursor: pointer;
     }
-  }
+  } */
   
   .fa-angle-down, .fa-angle-up {
     font-size: 30px;
@@ -439,26 +463,29 @@ main {
     background-color: #F6F6F6;
     color: #FF6060;
     font-size: 18px;
-    padding: 10px 20px 10px 20px;
     border-radius: 5px;
   }
   .collapse-content ul li {
     list-style: none;
   }
-
-  .collapse {
-    .collapse-content{
-      opacity: 0;
-      transition: opacity 1s ease
-    }
-    .collapse-content .visible{
-      opacity: 1;
-    }
-    .collapse-content .invisible{
-      opacity: 0;
-    }
+  .collapse-content {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
   }
   
+  .expanded {
+    .collapse-content {
+      visibility: visible;
+      opacity: 1;
+      height: auto;
+      padding: 10px;
+      transition: visibility 0.5s ease-in-out,
+                  opacity 0.5s ease-in-out,
+                  height 0.4s ease-in-out;
+    }
+  }
+
 }
 
 
