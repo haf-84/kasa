@@ -493,7 +493,7 @@ main {
     height: 0;
   }
   
-  .expanded {
+  .expanded  {
     .collapse-content {
       visibility: visible;
       opacity: 1;
