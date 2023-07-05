@@ -171,6 +171,9 @@ main {
   .collapse-header h2 {
     font-weight: 500;
     font-size: 24px;
+    @media (max-width:768px) {
+      font-size: 13px;
+    }
   }
 
   .collapse-content {
@@ -330,6 +333,10 @@ main {
     .card-details-host-info-name{
       font-size: 18px;
       width: 50%;
+      @media (max-width: 768px){
+        font-size: 12px;
+        width: 30%;
+        }
     }
 
     .card-details-img-host {
@@ -337,6 +344,10 @@ main {
       border-radius: 50%;
       width: 64px;
       height: 64px;
+      @media (max-width: 768px){
+        width: 32px;
+        height: 32px;
+        }
     }
 
     .card-details-location {
@@ -396,10 +407,16 @@ main {
   .collapse-header h2{
     font-size: 18px;
     font-weight: 500;
+    @media (max-width:768px) {
+      font-size: 13px;
+    }
   }
 
   .collapse, .collapsed{
     width: 100%;
+    @media (max-width:768px) {
+      margin-bottom: 20px;
+    }
   }
     /*animation pr l'icone*/
     .collapse-header {
@@ -407,11 +424,13 @@ main {
     }
   
     .toggle-icon {
+      &:hover{
+        cursor: pointer;
+      }
       position: absolute;
       top: 20%;
       right: 2%;
-      /* transform: rotate(0deg); */
-      transition: all 0.5s ease-in-out;
+      transition: transform 0.5s ease-in-out;
     }
   
     .collapsed .toggle-icon {
@@ -571,8 +590,9 @@ main {
 .card-details-description-equipements{
   display: block;
 }
-.card-details-title-location h1{
+.card-details-title-location .card-details-title-location-h1{
   font-size:18px;
+  margin-bottom: 15px;
 }
 .card-details-title-location .card-details-location{
   font-size: 14px;
@@ -580,6 +600,16 @@ main {
 .card-details-notation-tags{
   display: block;
   margin-bottom:20px;
+  font-size: 10px;
+
+  .card-details-stars{
+    .fa-star{
+      font-size: 15px;
+    }
+    .fa-star:first-of-type{
+      padding-left: 0;
+    }
+  }
 }
 .card-details-host-info {
   width: 40%;
@@ -587,36 +617,31 @@ main {
   position: absolute;
   right: 10px;
   bottom: -70px;
-  
-  .card-details-img-host{
-    width: 32px;
-    height: 32px;
-  }
+}
+.card-details-img-host{
+  width: 32px;
+  height: 32px;
+}
 
-  .card-details-host-info-name{
-    font-size: 12px;
-    width: 30%;
-    margin-right: 10px;
-  }
+.card-details-host-info-name{
+  font-size: 12px;
+  width: 30%;
 }
 
 
-.card-details-tags li{
+.card-details-tags .card-details-liste-tags{
   font-size: 10px;
 }
-.card-details-stars .fa-star {
-  font-size: 14px;
+.collapse.expanded:first-of-type{
+  margin-bottom: 20px;
 }
-
-.collapse-header h2{
+.collapse-header{
   font-size: 13px;
 }
 .expanded .collapse-content{
   font-size: 12px;
 }
-.card-details-description-equipements :nth-child(1){
-  margin-right: 0;
-}
+
 .expanded .collapse-content{
   margin-right: 0;
 }

@@ -12,7 +12,7 @@ function Collapse({title, children}){
             <div className='collapse-header'onClick={toggleCollapse}>
                 <h2>{title}</h2>
                 <div className='toggle-icon'>
-                    <i className={`fa-solid ${isCollapsed ? ' fa-angle-up': 'fa-angle-down'}`}/>
+                    <i className={`fa-solid ${isCollapsed ? 'fa-angle-up': 'fa-angle-down'}`}/>
                 </div>
             </div>
             <div className='collapse-content'>{children}</div>
